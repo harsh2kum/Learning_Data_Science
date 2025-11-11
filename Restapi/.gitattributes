@@ -1,0 +1,9 @@
+# Use LF for code files
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+
+# Treat images as binary (no line breaks)
+*.png binary
+*.jpg binary
