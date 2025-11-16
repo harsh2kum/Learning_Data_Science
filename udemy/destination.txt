@@ -1,0 +1,6 @@
+Hello how are you?
+This is a new line
+Append operation taking place!
+First line 
+second line 
+Third line
