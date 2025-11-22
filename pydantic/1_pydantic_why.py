@@ -1,46 +1,80 @@
-# Pydantic is a Python library used to validate data and convert (parse) it into the correct format automatically.
-# It is widely used in FastAPI, but you can use it in any Python project.
+# from pydantic import BaseModel, EmailStr, AnyUrl, Field
+# from typing import List, Dict, Optional, Annotated
 
-# def insert_patient_data(name: str,age:int):
-#     if type(name) == str and type(age) == int:
-#         if age < 0:
-#             raise ValueError('Age cant be negative')
-#         else:
-#             print(name)
-#             print(age)
-#             print('inserted into database') 
-#     else:
-#         raise TypeError('Incorrect data type')
-    
-# insert_patient_data('harsh',34)
+# class Patient(BaseModel):
+
+#     name: Annotated[str, Field(max_length=50, title='Name of the patient', description='Give the name of the patient in less than 50 chars', examples=['Nitish', 'Amit'])]
+#     email: EmailStr
+#     linkedin_url: AnyUrl
+#     age: int = Field(gt=0, lt=120)
+#     weight: Annotated[float, Field(gt=0, strict=True)]
+#     married: Annotated[bool, Field(default=None, description='Is the patient married or not')]
+#     allergies: Annotated[Optional[List[str]], Field(default=None, max_items=5)]   # FIXED
+#     contact_details: Dict[str, str]
 
 
-from pydantic import BaseModel
+# def update_patient_data(patient: Patient):
+
+#     print(patient.name)
+#     print(patient.age)
+#     print(patient.allergies)
+#     print(patient.married)
+#     print('updated')
+
+# patient_info = {
+#     'name':'nitish',
+#     'email':'abc@gmail.com',
+#     'linkedin_url':'http://linkedin.com/1322',
+#     'age': '30',
+#     'weight': 75.2,
+#     'contact_details': {'phone':'2353462'}
+# }
+
+# patient1 = Patient(**patient_info)
+
+# update_patient_data(patient1)
+
+
+##copilot
+from pydantic import BaseModel, EmailStr, AnyUrl, Field
+from typing import List, Dict, Optional, Annotated
 
 class Patient(BaseModel):
-    
-    name: str
-    age: int 
+    name: Annotated[
+        str,
+        Field(
+            max_length=50,
+            title='Name of the patient',
+            description='Give the name of the patient in less than 50 chars',
+            examples=['Nitish', 'Amit']
+        )
+    ]
+    email: EmailStr
+    linkedin_url: AnyUrl
+    age: int = Field(gt=0, lt=120)
+    weight: Annotated[float, Field(gt=0, strict=True)]
+    married: Annotated[Optional[bool], Field(default=None, description='Is the patient married or not')]
+    allergies: Annotated[Optional[List[str]], Field(default=None, max_length=5)]  # ✅ fixed for Pydantic v2
+    contact_details: Dict[str, str]
 
-def insert_patient_data(patient:Patient):
-    
-    print(patient.name)
-    print(patient.age)
-    print('innserted')
-    
 def update_patient_data(patient: Patient):
-    
     print(patient.name)
     print(patient.age)
-    print('update')   
-#create a dictionary 
-patient_info = {'name':"Harsh",'age':30}
+    print(patient.allergies)
+    print(patient.married)
+    print('updated')
 
-patient1 = Patient(**patient_info)  # ** is used to unpack dictionary 
+# Example input
+patient_info = {
+    'name': 'Harsh',
+    'email': 'abc@gmail.com',
+    'linkedin_url': 'http://linkedin.com/1322',
+    'age': 25,  # ✅ int instead of string
+    'weight': 75.2,
+    'married': True,
+    'allergies': ['pollen', 'dust'],
+    'contact_details': {'phone': '2353462'}
+}
 
-#call the function 
-insert_patient_data(patient1)
-
+patient1 = Patient(**patient_info)
 update_patient_data(patient1)
-
-
