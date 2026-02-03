@@ -1,0 +1,14 @@
+Generative AI is designed to create new content—such as text, images, code, or audio—based on user prompts.  It operates reactively, generating outputs by predicting the next logical element in a sequence using patterns learned from vast training data. Examples include ChatGPT, DALL·E, and GitHub Copilot. Its primary function is content creation, excelling in tasks like drafting documents, summarizing information, and generating creative ideas. 
+
+Agentic AI goes beyond content creation by acting autonomously to achieve complex, multi-step goals.  It plans, reasons, makes decisions, and executes actions across multiple tools and systems with minimal human intervention. Unlike generative AI, agentic AI maintains context, adapts to changing conditions, and uses feedback loops to improve outcomes. It is proactive and goal-driven, capable of handling workflows like booking flights, automating customer service, or managing project timelines.  Examples include AutoGPT, Devin AI, and AI-powered virtual assistants that coordinate tasks across platforms. 
+
+Key Differences:
+Function: Generative AI creates content; Agentic AI performs actions. 
+Autonomy: Generative AI has low autonomy (reactive); Agentic AI has high autonomy (proactive). 
+Workflow: Generative AI handles single tasks; Agentic AI manages multi-step, continuous processes. 
+Tool Use: Generative AI has limited tool access; Agentic AI dynamically uses APIs and tools. 
+Learning: Generative AI learns from historical data; Agentic AI adapts in real time via reinforcement learning. 
+Use Cases:
+Generative AI: Writing, image generation, code creation.
+Agentic AI: Workflow automation, research, compliance monitoring, customer onboarding. 
+While generative AI is widely adopted today, agentic AI is still emerging, with only 14% of companies using it at scale.  The most powerful applications combine both: using generative AI as a tool within agentic systems to create content during autonomous workflows. This synergy enables AI to not only generate ideas but also execute them—transforming how work is done.
