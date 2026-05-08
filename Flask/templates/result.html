@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Rule</title>
+</head>
+<body>
+
+<h1>
+    Based on the marks you have | {{ result }}
+
+    {% if result >= 50 %}
+    <h2>You have Passed with marks {{result}}</h2>
+    {% else %}
+    <h2>You have Failed with marks {{result}}</h2>
+    {% endif %}
+</h1>
+
+
+</body>
+</html>
